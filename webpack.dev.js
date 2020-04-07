@@ -1,7 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
@@ -22,8 +23,8 @@ module.exports = {
             {
               test: /\.s[ac]ss$/i,
               use: [
-                // Creates `style` nodes from JS strings
-                'style-loader',
+                // Extract Css files as separate file
+                MiniCssExtractPlugin.loader,
                 // Translates CSS into CommonJS
                 'css-loader',
                 // Compiles Sass to CSS
@@ -45,6 +46,7 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new MiniCssExtractPlugin()
     ]
 }
