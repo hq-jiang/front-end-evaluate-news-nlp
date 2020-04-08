@@ -38,6 +38,7 @@ module.exports = {
             filename: './index.html',
         }),
         new CleanWebpackPlugin({
+            dry: true,
             // Write Logs to Console
             verbose: true,
             // Automatically remove all unused webpack assets on rebuild
