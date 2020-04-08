@@ -1,4 +1,7 @@
+import { checkForName } from './nameChecker'
+
 function handleSubmit(event) {
+    alert("Form Submitted");
     event.preventDefault()
 
     // check what text was put into the form field
