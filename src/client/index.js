@@ -1,4 +1,4 @@
-import { checkForName } from './js/nameChecker'
+import { checkInputType } from './js/inputTypeChecker'
 import { handleSubmit } from './js/formHandler'
 import './styles/base.scss';
 import './styles/footer.scss';
@@ -10,6 +10,6 @@ console.log(checkForName);
 console.log("CHANGE!!");
 
 export {
-  checkForName,
+  checkInputType,
   handleSubmit
 }
