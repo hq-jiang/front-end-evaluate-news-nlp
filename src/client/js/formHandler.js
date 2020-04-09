@@ -1,12 +1,16 @@
 import { checkInputType } from './inputTypeChecker'
 
 function handleSubmit(event) {
-    alert("Form Submitted");
-    event.preventDefault()
+    event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value;
+    let formText = document.getElementById('inputtext').value;
     let inputType = checkInputType(formText);
+    if (!inputType.valid) {
+      let resultsDiv = document.getElementById('results');
+      resultsDiv.textContent = "Error: Invalid input";
+      return;
+    }
 
     console.log("::: Form Submitted :::")
     console.log("Input type", inputType);
