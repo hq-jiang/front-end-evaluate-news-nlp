@@ -1,15 +1,13 @@
 // Check if text, tweet or url
 function checkInputType(inputText) {
-  let inputType = "invalid";
+
   if (inputText.length == 0) {
-    return "invalid";
+    return {textType: "", valid: false};
   }
   if(inputText.startsWith("https://") || inputText.startsWith("http://")) {
-    return "url";
-  } else if (inputText.length <= 140) {
-    return "tweet";
+    return {textType: "url", valid: true};
   } else {
-    return "text";
+    return {textType: "text", valid: true};
   }
 }
 

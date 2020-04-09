@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
 
-    <body>
+  <body>
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+    <main>
+      <section>
+        <form class="" onsubmit="return mainLib.handleSubmit(event)">
+          <h1>Sentiment Analysis with Aylien</h1>
+          <p>
+            Select <em>tweet</em> for short text and <em>document</em> for long text.
+          </p>
+            <input type="radio" id="tweet" name="texttype" value="tweet">
+            <label for="tweet">tweet</label><br>
+            <input type="radio" id="document" name="texttype" value="document">
+            <label for="document">document</label><br>
+            <input id="inputtext" type="text" name="input" value="" placeholder="Enter text or url">
+            <input type="submit" name="" value="submit" onclick="return mainLib.handleSubmit(event)" onsubmit="return mainLib.handleSubmit(event)">
+            <p>
+              <strong>Note: </strong>Subjectivity analysis is currently only available in tweet mode, and it usually works best with sentence-level input.
+            </p>
+        </form>
+      <section>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return mainLib.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return mainLib.handleSubmit(event)" onsubmit="return mainLib.handleSubmit(event)">
-                </form>
-            <section>
+      <section>
+        <strong>Form Results:</strong>
+        <div id="results"></div>
+      </section>
+    </main>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-    </body>
+    <footer>
+      <p>This is a footer</p>
+    </footer>
+  </body>
 </html>
