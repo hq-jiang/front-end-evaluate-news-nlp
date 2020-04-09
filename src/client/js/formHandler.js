@@ -14,11 +14,11 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
     console.log("Input type", inputType);
-    // fetch('/test')
-    // .then(res => res.json())
-    // .then(function(res) {
-    //     document.getElementById('results').innerHTML = res.message
-    // })
+    fetch('localhost:8000/test')
+    .then(res => res.json())
+    .then(function(res) {
+        document.getElementById('results').innerHTML = res.message
+    })
 }
 
 export { handleSubmit }

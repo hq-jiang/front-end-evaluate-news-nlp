@@ -5,31 +5,39 @@ const mockAPIResponse = require('./mockAPI.js');
 
 // Read env variables
 const dotenv = require('dotenv');
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+
+if (process.env.API_ID == null || process.env.API_KEY == null) {
+  console.log("Env variables not setup correctly, exit program");
+  process.exit(1);
+}
+
 
 var textapi = new aylien({
   application_id: process.env.API_ID,
   application_key: process.env.API_KEY
 });
 
-textapi.sentiment({
-  'text': 'John is a very good football player!'
-}, function(error, response) {
-  if (error === null) {
-    console.log(response);
-  }
-});
+// textapi.sentiment({
+//   'url': 'https://edition.cnn.com/2020/04/08/uk/boris-johnson-coronavirus-wednesday-uk-gbr-intl/index.html',
+//   'language': "en",
+//   'mode': "text"
+// }, function(error, response) {
+//   if (error === null) {
+//     console.log(response);
+//   }
+// });
 
 
 const app = express();
 
-app.use(express.static('../../dist'));
+app.use(express.static(path.resolve(__dirname, '../../dist')));
 
 console.log(__dirname);
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('dist/index.html'));
+    res.sendFile(path.resolve(__dirname,'../../dist/index.html'));
 })
 
 // designates what port the app will listen to for incoming requests
