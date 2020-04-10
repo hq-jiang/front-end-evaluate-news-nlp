@@ -20,6 +20,11 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              loader: "babel-loader"
+            },
+            {
               test: /\.s[ac]ss$/i,
               use: [
                 // Extract Css files as separate file
