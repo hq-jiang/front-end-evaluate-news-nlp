@@ -61,9 +61,11 @@ function getMode() {
   } else if (!radioTweet.checked && radioDocument.checked) {
     return "document";
   } else {
-    console.error("Something is wrong with the radio buttons");
-    return "error";
+    throw new Error('Something is wrong with the radio buttons');
   }
 }
 
-export { handleSubmit }
+export {
+  handleSubmit,
+  getMode
+}
