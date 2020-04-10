@@ -14,3 +14,13 @@ input {
 #inputtext {
   width: 80%;
 }
+
+#section-results {
+  padding: 10px;
+  overflow: auto;
+  width: 100vw;
+  height: 500px;
+  background-color: white;
+  border: 1px solid #545454;
+  border-radius: 3px;
+}
