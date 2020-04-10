@@ -66,6 +66,7 @@ function makeAylienRequest (req, res) {
       console.log(response);
       res.send(response);
     } else {
+      console.error(response);
       res.send(error);
     }
   });
