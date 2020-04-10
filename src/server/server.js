@@ -12,21 +12,10 @@ if (process.env.API_ID == null || process.env.API_KEY == null) {
   process.exit(1);
 }
 
-
 var textapi = new aylien({
   application_id: process.env.API_ID,
   application_key: process.env.API_KEY
 });
-
-// textapi.sentiment({
-//   'url': 'https://edition.cnn.com/2020/04/08/uk/boris-johnson-coronavirus-wednesday-uk-gbr-intl/index.html',
-//   'language': "en",
-//   'mode': "text"
-// }, function(error, response) {
-//   if (error === null) {
-//     console.log(response);
-//   }
-// });
 
 
 const app = express();
