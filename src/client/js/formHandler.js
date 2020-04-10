@@ -46,6 +46,11 @@ function handleSubmit(event) {
       </p>
     `;
   })
+  .catch(function(error) {
+    document.getElementById('results').textContent = 'Error';
+    console.error(error);
+  })
+
 }
 
 function getMode() {
